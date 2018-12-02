@@ -1,0 +1,146 @@
+{
+  "version": "0.1.0",
+  "runner": "terminal",
+  "showOutput": "always",
+  "echoCommand": true,
+  "tasks": [
+  {
+    "taskName": "1-build_chrome_debug_icecc",
+    "command": "buildChromiumICECC.sh Debug",
+    "isShellCommand": true,
+    "isTestCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "2-build_chrome_release_icecc",
+    "command": "buildChromiumICECC.sh Release",
+    "isShellCommand": true,
+    "isBuildCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "3-build_debug_alone",
+    "command": "ninja -C out/Debug -j 2000",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "4-build_release_alone",
+    "command": "ninja -C out/Release -j 2000",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "5-build_test_debug_icecc",
+    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "6-build_test_release_icecc",
+    "command": "buildChromiumICECC.sh release unit_tests components_unittests browser_tests cc_unittests",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "7-gclient_sync",
+    "command": "gclient sync",
+    "isShellCommand": true,
+  }]
+}
