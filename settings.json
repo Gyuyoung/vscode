@@ -7,11 +7,9 @@
 
   // Default tab size of 2, for consistency with internal codebase.
   "editor.tabSize": 2,
-  // Do not figure out tab size from opening a file.
   "editor.detectIndentation": false,
-  // Add a line at 80 characters.
   "editor.rulers": [80],
-  // Trim tailing whitespace on save.
+  "editor.fontSize": 15,
   "files.trimTrailingWhitespace": true,
 
   // Optional: Highlight current line at the left of the editor.
@@ -40,8 +38,12 @@
   },
 
   "files.exclude": {
-    // Ignore build output folders.
-    "out*/**": true
+    "out*/**": true,
+    "**/.git": true,
+    "out/[^D]*/": true,
+    "out/Debug/[^g]*": true,
+    "out/Debug/g[^e]*": true,
+    "out_*/**": true
   },
 
   "files.watcherExclude": {
@@ -52,6 +54,7 @@
     // watcherExlude. Beware that this pattern might affect other out* folders
     // like src/cc/output/.
     "**/out*/**": true,
+    "**/.git": true,
     "**/third_party/**": true
   },
 
@@ -66,6 +69,6 @@
   // YouCompleteMe
   "ycmd.path": "/home/gyuyoung/.ycmd", // Please replace this path
   "ycmd.global_extra_config": "${workspaceRoot}/tools/vim/chromium.ycm_extra_conf.py",
-  "ycmd.confirm_extra_conf": false,
+  "ycmd.confirm_extra_conf": false
 }
 
