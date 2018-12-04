@@ -51,8 +51,8 @@
     }]
   },
   {
-    "taskName": "3-build_debug_alone",
-    "command": "ninja -C out/Debug -j 2000",
+    "taskName": "3-build_chrome_with_tests_debug_icecc",
+    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -73,8 +73,8 @@
     }]
   },
   {
-    "taskName": "4-build_release_alone",
-    "command": "ninja -C out/Release -j 2000",
+    "taskName": "4-build_chrome_with_tests_release_icecc",
+    "command": "buildChromiumICECC.sh release unit_tests components_unittests browser_tests cc_unittests blink_tests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -95,8 +95,8 @@
     }]
   },
   {
-    "taskName": "5-build_test_debug_icecc",
-    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests",
+    "taskName": "5-build_debug_alone",
+    "command": "ninja -C out/Debug -j 2000 chrome",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -117,8 +117,8 @@
     }]
   },
   {
-    "taskName": "6-build_test_release_icecc",
-    "command": "buildChromiumICECC.sh release unit_tests components_unittests browser_tests cc_unittests",
+    "taskName": "6-build_release_alone",
+    "command": "ninja -C out/Release -j 2000 chrome",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -140,7 +140,7 @@
   },
   {
     "taskName": "7-gclient_sync",
-    "command": "gclient sync",
-    "isShellCommand": true,
+    "command": "buildChromiumICECC.sh --sync",
+    "isShellCommand": true
   }]
 }
