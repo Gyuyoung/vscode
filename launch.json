@@ -7,12 +7,12 @@
     "request": "launch",
     "targetArchitecture": "x64",
     "program": "${workspaceRoot}/out/Debug/chrome",
-    "args": ["--single-process"],  // Optional command line args
-    "preLaunchTask": "1-build_chrome_debug",
+    "args": ["--single-process "],  // Optional command line args
+    "preLaunchTask": "",
     "stopAtEntry": false,
     "cwd": "${workspaceRoot}/out/Debug/",
     "environment": [],
-    "externalConsole": true
+    "externalConsole": false
   },
   {
     "name": "Chrome Release",
@@ -21,7 +21,7 @@
     "targetArchitecture": "x64",
     "program": "${workspaceRoot}/out/Release/chrome",
     "args": [],  // Optional command line args
-    "preLaunchTask": "2-build_chrome_release",
+    "preLaunchTask": "",
     "stopAtEntry": false,
     "cwd": "${workspaceRoot}/out/Release/",
     "environment": [],
