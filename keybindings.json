@@ -1,0 +1,29 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+      "key": "ctrl+up",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "terminalFocus"
+    },
+    {
+      "key": "ctrl+down",
+      "command": "workbench.action.terminal.focus",
+      "when": "!terminalFocus"
+    },
+    {
+      "key": "ctrl+alt+g",
+      "command": "workbench.action.tasks.runTask",
+    },
+    {
+      "key": "alt+shift+2",
+      "command": "workbench.action.editorLayoutTwoColumns",
+    },
+    {
+      "key": "alt+shift+3",
+      "command": "workbench.action.editorLayoutThreeColumns",
+    },
+    {
+      "key": "ctrl+shift+m",
+      "command": "workbench.action.toggleMaximizedPanel",
+    }
+]
