@@ -11,7 +11,7 @@
       "when": "!terminalFocus"
     },
     {
-      "key": "ctrl+alt+g",
+      "key": "ctrl+cmd+b",
       "command": "workbench.action.tasks.runTask",
     },
     {
@@ -25,5 +25,9 @@
     {
       "key": "ctrl+shift+m",
       "command": "workbench.action.toggleMaximizedPanel",
+    },
+    {
+      "key": "ctrl+`",
+      "command": "workbench.action.terminal.toggleTerminal",
     }
 ]
