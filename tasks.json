@@ -52,7 +52,7 @@
   },
   {
     "taskName": "3-build_chrome_with_tests_debug_icecc",
-    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests",
+    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests services_unittests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -139,7 +139,7 @@
     }]
   },
   {
-    "taskName": "7-build_chromeos_release_icecc",
+    "taskName": "7-build_chromeos_debug_icecc",
     "command": "buildChromiumICECC.sh ChromeOS",
     "isShellCommand": true,
     "isTestCommand": true,
