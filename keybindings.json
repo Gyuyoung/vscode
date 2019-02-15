@@ -29,5 +29,18 @@
     {
       "key": "ctrl+`",
       "command": "workbench.action.terminal.toggleTerminal",
-    }
+    },
+    { "key": "ctrl+shift+down",
+      "command": "workbench.action.terminal.scrollDown",
+      "when": "terminalFocus",
+    },
+    { "key": "ctrl+shift+up",
+      "command": "workbench.action.terminal.scrollUp",
+      "when": "terminalFocus",
+    },
+    { "key": "ctrl+enter",
+      "command": "workbench.explorer.fileView.focus",
+    },
+
+    // - workbench.explorer.fileView.focus
 ]

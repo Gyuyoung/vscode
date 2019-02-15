@@ -81,7 +81,9 @@
     "cinttypes": "cpp",
     "cstdarg": "cpp",
     "iomanip": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "queue": "cpp",
+    "numeric": "cpp"
   },
 
   "files.exclude": {

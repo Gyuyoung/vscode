@@ -52,7 +52,7 @@
   },
   {
     "taskName": "3-build_chrome_with_tests_debug_icecc",
-    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests services_unittests",
+    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests services_unittests content_browsertests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -162,7 +162,30 @@
     }]
   },
   {
-    "taskName": "8-gclient_sync",
+    "taskName": "8-build_ozone_debug_icecc",
+    "command": "buildChromiumICECC.sh Ozone",
+    "isShellCommand": true,
+    "isTestCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "9-gclient_sync",
     "command": "buildChromiumICECC.sh --sync",
     "isShellCommand": true
   }]
