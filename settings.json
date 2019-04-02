@@ -83,7 +83,9 @@
     "iomanip": "cpp",
     "iostream": "cpp",
     "queue": "cpp",
-    "numeric": "cpp"
+    "numeric": "cpp",
+    "*.inc": "cpp",
+    "algorithm": "cpp"
   },
 
   "files.exclude": {
@@ -104,7 +106,6 @@
     // like src/cc/output/.
     "**/out*/**": true,
     "**/.git": true,
-    "**/third_party/**": true
   },
 
   // Wider author column for annotator extension.
