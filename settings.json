@@ -28,72 +28,12 @@
   // Optional: Same for files opened from quick open (Ctrl+P).
   //"workbench.editor.enablePreviewFromQuickOpen": false,
 
-  "files.associations": {
-    "*.grd": "xml",
-    "*.gni": "javascript",
-    "*.gn": "javascript",
-    "array": "cpp",
-    "atomic": "cpp",
-    "*.tcc": "cpp",
-    "bitset": "cpp",
-    "cctype": "cpp",
-    "chrono": "cpp",
-    "clocale": "cpp",
-    "cmath": "cpp",
-    "condition_variable": "cpp",
-    "cstddef": "cpp",
-    "cstdint": "cpp",
-    "cstdio": "cpp",
-    "cstdlib": "cpp",
-    "cstring": "cpp",
-    "ctime": "cpp",
-    "cwchar": "cpp",
-    "cwctype": "cpp",
-    "deque": "cpp",
-    "forward_list": "cpp",
-    "list": "cpp",
-    "unordered_map": "cpp",
-    "unordered_set": "cpp",
-    "vector": "cpp",
-    "exception": "cpp",
-    "fstream": "cpp",
-    "functional": "cpp",
-    "initializer_list": "cpp",
-    "iosfwd": "cpp",
-    "istream": "cpp",
-    "limits": "cpp",
-    "memory": "cpp",
-    "mutex": "cpp",
-    "new": "cpp",
-    "optional": "cpp",
-    "ostream": "cpp",
-    "ratio": "cpp",
-    "sstream": "cpp",
-    "stdexcept": "cpp",
-    "streambuf": "cpp",
-    "string_view": "cpp",
-    "system_error": "cpp",
-    "thread": "cpp",
-    "type_traits": "cpp",
-    "tuple": "cpp",
-    "typeinfo": "cpp",
-    "utility": "cpp",
-    "cinttypes": "cpp",
-    "cstdarg": "cpp",
-    "iomanip": "cpp",
-    "iostream": "cpp",
-    "queue": "cpp",
-    "numeric": "cpp",
-    "*.inc": "cpp",
-    "algorithm": "cpp"
-  },
-
   "files.exclude": {
     "out*/**": true,
     "**/.git": true,
     "out/[^D]*/": true,
-    "out/Debug/[^g]*": true,
-    "out/Debug/g[^e]*": true,
+    "out/Debug/[^g]*": false,
+    "out/Debug/g[^e]*": false,
     "out_*/**": true
   },
 
@@ -104,7 +44,7 @@
     // There is currently another issue that requires a leading **/ for
     // watcherExlude. Beware that this pattern might affect other out* folders
     // like src/cc/output/.
-    "**/out*/**": true,
+    // "**/out*/**": true,
     "**/.git": true,
   },
 
@@ -121,6 +61,9 @@
   "ycmd.global_extra_config": "${workspaceRoot}/tools/vim/chromium.ycm_extra_conf.py",
   "ycmd.confirm_extra_conf": false,
 
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.rightClickBehavior": "copyPaste",
 }
 

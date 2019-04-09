@@ -8,7 +8,7 @@
     {
       "key": "ctrl+down",
       "command": "workbench.action.terminal.focus",
-      "when": "!terminalFocus"
+      "when": "!terminalFocus && !searchViewletFocus "
     },
     {
       "key": "ctrl+cmd+b",
@@ -41,6 +41,20 @@
     { "key": "ctrl+enter",
       "command": "workbench.explorer.fileView.focus",
     },
-
+    { "key": "ctrl+alt+shift+up",
+      "command": "editor.action.moveLinesUpAction",
+      "when": "editorTextFocus"
+    },
+    { "key": "ctrl+alt+shift+down",
+      "command": "editor.action.moveLinesDownAction",
+      "when": "editorTextFocus"
+    },
+    { "key": "f4",
+      "command": "search.action.focusNextSearchResult",
+      "when": "hasSearchResult"
+    },
+    { "key": "shift+f4",
+      "command": "search.action.focusPreviousSearchResult",
+      "when": "hasSearchResult" },
     // - workbench.explorer.fileView.focus
 ]

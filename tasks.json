@@ -52,7 +52,7 @@
   },
   {
     "taskName": "3-build_chrome_with_tests_debug_icecc",
-    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests services_unittests content_browsertests",
+    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests services_unittests content_browsertests webkit_unit_tests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -185,7 +185,51 @@
     }]
   },
   {
-    "taskName": "9-gclient_sync",
+    "taskName": "9-build_gcc_debug_alone",
+    "command": "ninja -C out/GCC -j 2000 chrome",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "10-build_chrome_android_icecc",
+    "command": "buildChromiumICECC.sh Android",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "11-gclient_sync",
     "command": "buildChromiumICECC.sh --sync",
     "isShellCommand": true
   }]
