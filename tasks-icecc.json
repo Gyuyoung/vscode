@@ -5,8 +5,8 @@
   "echoCommand": true,
   "tasks": [
   {
-    "taskName": "1-build_chrome_debug_using_goma",
-    "command": "buildChromiumGoma.sh Debug",
+    "taskName": "1-build_chrome_debug_icecc",
+    "command": "buildChromiumICECC.sh Debug",
     "isShellCommand": true,
     "isTestCommand": true,
     "problemMatcher": [
@@ -28,8 +28,8 @@
     }]
   },
   {
-    "taskName": "2-build_chrome_release_using_goma",
-    "command": "buildChromiumGoma.sh Release",
+    "taskName": "2-build_chrome_release_icecc",
+    "command": "buildChromiumICECC.sh Release",
     "isShellCommand": true,
     "isBuildCommand": true,
     "problemMatcher": [
@@ -51,8 +51,8 @@
     }]
   },
   {
-    "taskName": "3-build_chrome_with_tests_debug_using_goma",
-    "command": "buildChromiumGoma.sh Debug all_tests",
+    "taskName": "3-build_chrome_with_tests_debug_icecc",
+    "command": "buildChromiumICECC.sh Debug unit_tests components_unittests browser_tests cc_unittests blink_tests app_shell_unittests services_unittests content_browsertests webkit_unit_tests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -73,7 +73,7 @@
     }]
   },
   {
-    "taskName": "4-build_chrome_with_tests_release_using_goma",
+    "taskName": "4-build_chrome_with_tests_release_icecc",
     "command": "buildChromiumICECC.sh release unit_tests components_unittests browser_tests cc_unittests blink_tests",
     "isShellCommand": true,
     "problemMatcher": [
@@ -95,8 +95,52 @@
     }]
   },
   {
-    "taskName": "5-build_chromeos_debug_using_goma",
-    "command": "buildChromiumGoma.sh ChromeOS",
+    "taskName": "5-build_debug_alone",
+    "command": "ninja -C out/Debug -j 2000 chrome",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "6-build_release_alone",
+    "command": "ninja -C out/Release -j 2000 chrome",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
+  },
+  {
+    "taskName": "7-build_chromeos_debug_icecc",
+    "command": "buildChromiumICECC.sh ChromeOS",
     "isShellCommand": true,
     "isTestCommand": true,
     "problemMatcher": [
@@ -118,8 +162,8 @@
     }]
   },
   {
-    "taskName": "6-build_ozone_debug_using_goma",
-    "command": "buildChromiumGoma.sh Ozone",
+    "taskName": "8-build_ozone_debug_icecc",
+    "command": "buildChromiumICECC.sh Ozone",
     "isShellCommand": true,
     "isTestCommand": true,
     "problemMatcher": [
@@ -141,8 +185,8 @@
     }]
   },
   {
-    "taskName": "7-build_chrome_android_using_goma",
-    "command": "buildChromiumGoma.sh Android",
+    "taskName": "9-build_gcc_debug_alone",
+    "command": "ninja -C out/GCC -j 2000 chrome",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -163,13 +207,30 @@
     }]
   },
   {
-    "taskName": "8-gclient_sync",
-    "command": "buildChromiumGoma.sh sync",
-    "isShellCommand": true
+    "taskName": "10-build_chrome_android_icecc",
+    "command": "buildChromiumICECC.sh Android",
+    "isShellCommand": true,
+    "problemMatcher": [
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*):(\\d+):(\\d+):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "line": 2, "column": 3, "severity": 4, "message": 5
+      }
+    },
+    {
+      "owner": "cpp",
+      "fileLocation": ["relative", "${workspaceRoot}"],
+      "pattern": {
+        "regexp": "^../../(.*?):(.*):\\s+(warning|\\w*\\s?error):\\s+(.*)$",
+        "file": 1, "severity": 3, "message": 4
+      }
+    }]
   },
   {
-    "taskName": "9-goma_client_start",
-    "command": "${HOME}/goma/goma_ctl.py ensure_start",
+    "taskName": "11-gclient_sync",
+    "command": "buildChromiumICECC.sh --sync",
     "isShellCommand": true
   }]
 }
