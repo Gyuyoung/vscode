@@ -5,7 +5,7 @@
   "echoCommand": true,
   "tasks": [
   {
-    "taskName": "1-build_chrome_debug_using_goma",
+    "taskName": "1-build_chrome_debug_goma",
     "command": "buildChromiumGoma.sh Debug",
     "isShellCommand": true,
     "isTestCommand": true,
@@ -28,7 +28,7 @@
     }]
   },
   {
-    "taskName": "2-build_chrome_release_using_goma",
+    "taskName": "2-build_chrome_release_goma",
     "command": "buildChromiumGoma.sh Release",
     "isShellCommand": true,
     "isBuildCommand": true,
@@ -51,7 +51,7 @@
     }]
   },
   {
-    "taskName": "3-build_chrome_with_tests_debug_using_goma",
+    "taskName": "3-build_chrome_debug_with_tests_goma",
     "command": "buildChromiumGoma.sh Debug all_tests",
     "isShellCommand": true,
     "problemMatcher": [
@@ -73,8 +73,8 @@
     }]
   },
   {
-    "taskName": "4-build_chrome_with_tests_release_using_goma",
-    "command": "buildChromiumICECC.sh release unit_tests components_unittests browser_tests cc_unittests blink_tests",
+    "taskName": "4-build_chrome_release_with_tests_goma",
+    "command": "buildChromiumGoma.sh Release all_tests",
     "isShellCommand": true,
     "problemMatcher": [
     {
@@ -95,8 +95,8 @@
     }]
   },
   {
-    "taskName": "5-build_chromeos_debug_using_goma",
-    "command": "buildChromiumGoma.sh ChromeOS",
+    "taskName": "5-build_chromeos_debug_with_tests_goma",
+    "command": "buildChromiumGoma.sh ChromeOS unit_tests",
     "isShellCommand": true,
     "isTestCommand": true,
     "problemMatcher": [
@@ -118,7 +118,7 @@
     }]
   },
   {
-    "taskName": "6-build_ozone_debug_using_goma",
+    "taskName": "6-build_ozone_debug_goma",
     "command": "buildChromiumGoma.sh Ozone",
     "isShellCommand": true,
     "isTestCommand": true,
@@ -141,7 +141,7 @@
     }]
   },
   {
-    "taskName": "7-build_chrome_android_using_goma",
+    "taskName": "7-build_chrome_android_goma",
     "command": "buildChromiumGoma.sh Android",
     "isShellCommand": true,
     "problemMatcher": [
@@ -169,7 +169,7 @@
   },
   {
     "taskName": "9-goma_client_start",
-    "command": "${HOME}/goma/goma_ctl.py ensure_start",
+    "command": "${HOME}/goma/goma_ctl.py restart",
     "isShellCommand": true
   }]
 }

@@ -73,7 +73,7 @@
     }]
   },
   {
-    "taskName": "4-build_chrome_release_with_tests__goma",
+    "taskName": "4-build_chrome_release_with_tests_goma",
     "command": "buildChromiumGoma.sh Release all_tests",
     "isShellCommand": true,
     "problemMatcher": [
@@ -95,8 +95,8 @@
     }]
   },
   {
-    "taskName": "5-build_chromeos_debug_goma",
-    "command": "buildChromiumGoma.sh ChromeOS",
+    "taskName": "5-build_chromeos_debug_with_tests_goma",
+    "command": "buildChromiumGoma.sh ChromeOS unit_tests",
     "isShellCommand": true,
     "isTestCommand": true,
     "problemMatcher": [
@@ -169,7 +169,7 @@
   },
   {
     "taskName": "9-goma_client_start",
-    "command": "${HOME}/goma/goma_ctl.py ensure_start",
+    "command": "${HOME}/goma/goma_ctl.py restart",
     "isShellCommand": true
   }]
 }
