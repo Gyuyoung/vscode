@@ -96,7 +96,7 @@
   },
   {
     "taskName": "5-build_chromeos_debug_with_tests_goma",
-    "command": "buildChromiumGoma.sh ChromeOS unit_tests",
+    "command": "buildChromiumGoma.sh ChromeOS all_tests",
     "isShellCommand": true,
     "isTestCommand": true,
     "problemMatcher": [

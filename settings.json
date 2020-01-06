@@ -141,7 +141,13 @@
     "__memory": "cpp",
     "*.inc": "cpp",
     "__tree": "cpp",
-    "charconv": "cpp"
+    "charconv": "cpp",
+    "*.mm": "cpp",
+    "*.idl": "cpp",
+    "__locale": "cpp",
+    "__nullptr": "cpp",
+    "__string": "cpp",
+    "__std_stream": "cpp"
   },
   "git.ignoreLimitWarning": true,
 }
